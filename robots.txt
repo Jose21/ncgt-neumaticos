@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+# Después de publicar, reemplaza TU-USUARIO/TU-REPOSITORIO por la URL real.
+Sitemap: https://TU-USUARIO.github.io/TU-REPOSITORIO/sitemap.xml

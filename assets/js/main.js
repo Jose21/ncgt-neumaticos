@@ -1,0 +1,1 @@
+document.addEventListener('DOMContentLoaded',()=>{document.querySelectorAll('#year').forEach(e=>e.textContent=new Date().getFullYear());const b=document.querySelector('.menu'),n=document.querySelector('nav');if(b&&n)b.onclick=()=>n.classList.toggle('open')});
