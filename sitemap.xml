@@ -1,7 +1,25 @@
-<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-<url><loc>https://TU-USUARIO.github.io/TU-REPOSITORIO/</loc></url>
-<url><loc>https://TU-USUARIO.github.io/TU-REPOSITORIO/neumaticos.html</loc></url>
-<url><loc>https://TU-USUARIO.github.io/TU-REPOSITORIO/servicios.html</loc></url>
-<url><loc>https://TU-USUARIO.github.io/TU-REPOSITORIO/nosotros.html</loc></url>
-<url><loc>https://TU-USUARIO.github.io/TU-REPOSITORIO/contacto.html</loc></url>
+<?xml version="1.0" encoding="UTF-8"?>
+
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+    <url>
+        <loc>https://jose21.github.io/ncgt-neumaticos/</loc>
+    </url>
+
+    <url>
+        <loc>https://jose21.github.io/ncgt-neumaticos/neumaticos.html</loc>
+    </url>
+
+    <url>
+        <loc>https://jose21.github.io/ncgt-neumaticos/servicios.html</loc>
+    </url>
+
+    <url>
+        <loc>https://jose21.github.io/ncgt-neumaticos/nosotros.html</loc>
+    </url>
+
+    <url>
+        <loc>https://jose21.github.io/ncgt-neumaticos/contacto.html</loc>
+    </url>
+
 </urlset>
