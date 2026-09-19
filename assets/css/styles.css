@@ -1,1 +1,1369 @@
-*{box-sizing:border-box} :root{--dark:#111827;--accent:#f59e0b;--text:#273244;--muted:#667085;--border:#e5e7eb}body{margin:0;font-family:Arial,Helvetica,sans-serif;color:var(--text);line-height:1.6}a{color:inherit}.container{width:min(1120px,92%);margin:auto}header{position:sticky;top:0;z-index:10;background:#fff;border-bottom:1px solid var(--border)}.nav{min-height:76px;display:flex;align-items:center;justify-content:space-between}.brand{display:flex;align-items:center;gap:10px;text-decoration:none}.brand>b{width:42px;height:42px;border-radius:12px;background:var(--dark);color:#fbbf24;display:grid;place-items:center;font-size:22px}.brand strong{display:block;font-size:20px}.brand small{display:block;color:var(--muted);font-size:10px}.nav nav{display:flex;gap:25px}.nav nav a{text-decoration:none;font-weight:bold;font-size:14px;padding:27px 0;border-bottom:3px solid transparent}.nav nav a:hover,.nav nav a.active{border-color:var(--accent)}.menu{display:none;border:0;background:none;font-size:25px}.hero{background:linear-gradient(135deg,#111827,#2d3748);color:white;padding:90px 0}.hero-grid{display:grid;grid-template-columns:1.25fr .75fr;gap:60px;align-items:center}.hero h1,.page h1{font-size:clamp(40px,6vw,64px);line-height:1.05;margin:5px 0 20px}.hero p{font-size:19px;color:#d6dae1}.hero label,.page label,.section>div>label,.dark label{color:var(--accent);font-size:12px;font-weight:800;letter-spacing:.16em}.actions{display:flex;gap:12px;margin:30px 0}.btn{display:inline-block;padding:13px 20px;border-radius:10px;text-decoration:none;font-weight:800;border:2px solid transparent}.primary{background:var(--accent);color:#111827}.outline{border-color:#64748b;color:#fff}.light{background:#fff;color:#111827}.hero-card{background:#fff;color:var(--text);border-radius:24px;padding:40px;box-shadow:0 25px 60px #0005}.hero-card .wheel{text-align:center;font-size:75px}.hero-card h2{text-align:center;font-size:36px;margin:10px}.hero-card p{text-align:center;color:var(--muted)}.hero-card strong{display:block;margin:10px 0}.strip{background:#f3f4f6;border-bottom:1px solid var(--border)}.strip-grid{display:grid;grid-template-columns:repeat(3,1fr);padding:25px 0;gap:20px}.strip-grid div{display:grid}.strip-grid span,.muted{color:var(--muted)}.section{padding:80px 0}.section h2{font-size:36px;line-height:1.15}.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:30px}.cards article{padding:30px;border:1px solid var(--border);border-radius:18px}.cards i{font-size:35px;color:var(--accent);font-style:normal;font-weight:bold}.cards h3{font-size:21px}.cards p{color:var(--muted)}.cards a{font-weight:bold;text-decoration:none}.dark{background:var(--dark);color:white;padding:70px 0}.cta{display:flex;align-items:center;justify-content:space-between}.cta h2{margin:5px 0}.page{padding:75px 0;background:var(--dark);color:white}.page p{font-size:18px;color:#cbd5e1;max-width:720px}.box{margin-top:40px;padding:30px;border-radius:18px;background:#fff8e7;border:1px solid #f4d37d}.services{display:grid;gap:10px}.services article{display:grid;grid-template-columns:70px 1fr;gap:25px;padding:28px;border-bottom:1px solid var(--border)}.services article>b{color:var(--accent);font-size:24px}.services h2{margin:0;font-size:25px}.narrow{max-width:820px}.contact{display:grid;grid-template-columns:1fr 1fr;gap:35px}footer{background:#0b1120;color:#cbd5e1;padding:45px 0 20px}.foot{display:grid;grid-template-columns:1fr 1fr 1fr;gap:30px}.foot b{color:#fff;font-size:20px}.foot a{color:#fff}.bottom{text-align:center;border-top:1px solid #273244;margin-top:30px;padding-top:18px;font-size:12px;color:#8995a8}@media(max-width:800px){.nav nav{display:none;position:absolute;top:76px;left:0;right:0;background:#fff;padding:10px 4%;flex-direction:column;gap:0}.nav nav.open{display:flex}.nav nav a{padding:12px 0}.menu{display:block}.hero{padding:60px 0}.hero-grid,.contact{grid-template-columns:1fr}.cards,.strip-grid,.foot{grid-template-columns:1fr}.section{padding:60px 0}.cta{display:grid;gap:25px}}
+* {
+    box-sizing: border-box;
+}
+
+:root {
+    --dark: #071329;
+    --dark-2: #0b1d3d;
+
+    --blue: #147bd1;
+    --blue-light: #22a7e8;
+
+    --accent: #ffd400;
+    --accent-dark: #eabf00;
+
+    --text: #1f2937;
+    --muted: #667085;
+
+    --border: #e5e7eb;
+    --light: #f5f7fa;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--text);
+    line-height: 1.6;
+    background: #fff;
+}
+
+a {
+    color: inherit;
+}
+
+.container {
+    width: min(1120px, 92%);
+    margin: auto;
+}
+
+
+/* ========================================
+   HEADER
+======================================== */
+
+header {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background: #fff;
+    border-bottom: 1px solid var(--border);
+    box-shadow: 0 2px 12px rgba(0, 0, 0, .05);
+}
+
+.nav {
+    min-height: 82px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+}
+
+.brand-logo {
+    width: 58px;
+    height: 58px;
+    object-fit: contain;
+    border-radius: 8px;
+}
+
+.brand strong {
+    display: block;
+    color: var(--dark);
+    font-size: 21px;
+    line-height: 1.1;
+}
+
+.brand small {
+    display: block;
+    color: var(--muted);
+    font-size: 10px;
+    margin-top: 3px;
+}
+
+.nav nav {
+    display: flex;
+    gap: 25px;
+}
+
+.nav nav a {
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 14px;
+    padding: 29px 0 26px;
+    border-bottom: 3px solid transparent;
+    transition: .2s;
+}
+
+.nav nav a:hover,
+.nav nav a.active {
+    color: var(--blue);
+    border-color: var(--accent);
+}
+
+.menu {
+    display: none;
+    border: 0;
+    background: none;
+    font-size: 25px;
+    cursor: pointer;
+}
+
+
+/* ========================================
+   HERO
+======================================== */
+
+.hero {
+    position: relative;
+    overflow: hidden;
+
+    background:
+        radial-gradient(circle at 85% 40%,
+            rgba(20, 123, 209, .32),
+            transparent 30%),
+        linear-gradient(135deg,
+            var(--dark),
+            var(--dark-2));
+
+    color: white;
+    padding: 90px 0;
+}
+
+.hero::after {
+    content: "";
+    position: absolute;
+    width: 450px;
+    height: 450px;
+    right: -180px;
+    bottom: -260px;
+    border: 70px solid rgba(34, 167, 232, .08);
+    border-radius: 50%;
+}
+
+.hero-grid {
+    position: relative;
+    z-index: 1;
+
+    display: grid;
+    grid-template-columns: 1.25fr .75fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.hero h1,
+.page h1 {
+    font-size: clamp(40px, 6vw, 64px);
+    line-height: 1.05;
+    margin: 5px 0 20px;
+}
+
+.hero p {
+    font-size: 19px;
+    color: #d6dae1;
+    max-width: 650px;
+}
+
+.hero label,
+.page label,
+.section>div>label,
+.dark label {
+    color: var(--accent);
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: .16em;
+}
+
+
+/* ========================================
+   BOTONES
+======================================== */
+
+.actions {
+    display: flex;
+    gap: 12px;
+    margin: 30px 0;
+    flex-wrap: wrap;
+}
+
+.btn {
+    display: inline-block;
+    padding: 13px 20px;
+    border-radius: 10px;
+
+    text-decoration: none;
+    font-weight: 800;
+
+    border: 2px solid transparent;
+
+    transition:
+        transform .2s,
+        background .2s,
+        border-color .2s;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+}
+
+.primary {
+    background: var(--accent);
+    color: var(--dark);
+}
+
+.primary:hover {
+    background: var(--accent-dark);
+}
+
+.outline {
+    border-color: var(--blue-light);
+    color: #fff;
+}
+
+.outline:hover {
+    background: var(--blue);
+    border-color: var(--blue);
+}
+
+.light {
+    background: #fff;
+    color: var(--dark);
+}
+
+.light:hover {
+    background: var(--accent);
+}
+
+
+/* ========================================
+   TARJETA HERO
+======================================== */
+
+.hero-card {
+    background: #fff;
+    color: var(--text);
+
+    border-radius: 24px;
+    padding: 40px;
+
+    border-top: 5px solid var(--blue);
+
+    box-shadow:
+        0 25px 60px rgba(0, 0, 0, .35);
+}
+
+
+.hero-logo {
+    display: block;
+    width: min(240px, 90%);
+    height: auto;
+    margin: 0 auto 15px;
+    border-radius: 18px;
+}
+
+.hero-card h2 {
+    text-align: center;
+    font-size: 36px;
+    margin: 10px;
+    color: var(--dark);
+}
+
+.hero-card p {
+    text-align: center;
+    color: var(--muted);
+}
+
+.hero-card strong {
+    display: block;
+    margin: 10px 0;
+}
+
+
+/* ========================================
+   FRANJA INFORMATIVA
+======================================== */
+
+.strip {
+    background: var(--light);
+    border-bottom: 1px solid var(--border);
+}
+
+.strip-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+
+    padding: 25px 0;
+    gap: 20px;
+}
+
+.strip-grid div {
+    display: grid;
+}
+
+.strip-grid b {
+    color: var(--dark);
+}
+
+.strip-grid span,
+.muted {
+    color: var(--muted);
+}
+
+
+/* ========================================
+   SECCIONES
+======================================== */
+
+.section {
+    padding: 80px 0;
+}
+
+.section h2 {
+    font-size: 36px;
+    line-height: 1.15;
+    color: var(--dark);
+}
+
+
+/* ========================================
+   TARJETAS
+======================================== */
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+    margin-top: 30px;
+}
+
+.cards article {
+    padding: 30px;
+
+    border: 1px solid var(--border);
+    border-radius: 18px;
+
+    background: #fff;
+
+    transition:
+        transform .2s,
+        box-shadow .2s,
+        border-color .2s;
+}
+
+.cards article:hover {
+    transform: translateY(-4px);
+
+    border-color: #cbd5e1;
+
+    box-shadow:
+        0 15px 35px rgba(7, 19, 41, .08);
+}
+
+.cards i {
+    font-size: 35px;
+    color: var(--blue);
+    font-style: normal;
+    font-weight: bold;
+}
+
+.cards h3 {
+    font-size: 21px;
+    color: var(--dark);
+}
+
+.cards p {
+    color: var(--muted);
+}
+
+.cards a {
+    font-weight: bold;
+    text-decoration: none;
+    color: var(--blue);
+}
+
+.cards a:hover {
+    text-decoration: underline;
+}
+
+
+/* ========================================
+   SECCIONES OSCURAS
+======================================== */
+
+.dark {
+    background:
+        linear-gradient(135deg,
+            var(--dark),
+            var(--dark-2));
+
+    color: white;
+    padding: 70px 0;
+
+    border-top: 4px solid var(--blue);
+}
+
+.cta {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+.cta h2 {
+    margin: 5px 0;
+    color: #fff;
+}
+
+
+/* ========================================
+   ENCABEZADOS INTERNOS
+======================================== */
+
+.page {
+    padding: 75px 0;
+
+    background:
+        radial-gradient(circle at 90% 50%,
+            rgba(20, 123, 209, .30),
+            transparent 25%),
+        linear-gradient(135deg,
+            var(--dark),
+            var(--dark-2));
+
+    color: white;
+
+    border-bottom: 4px solid var(--blue);
+}
+
+.page p {
+    font-size: 18px;
+    color: #cbd5e1;
+    max-width: 720px;
+}
+
+
+/* ========================================
+   CAJAS
+======================================== */
+
+.box {
+    margin-top: 40px;
+    padding: 30px;
+
+    border-radius: 18px;
+
+    background: #f7fbff;
+
+    border:
+        1px solid #cfe8fa;
+
+    border-left:
+        5px solid var(--blue);
+}
+
+.box h2,
+.box h3 {
+    color: var(--dark);
+}
+
+
+/* ========================================
+   SERVICIOS
+======================================== */
+
+.services {
+    display: grid;
+    gap: 10px;
+}
+
+.services article {
+    display: grid;
+    grid-template-columns: 70px 1fr;
+
+    gap: 25px;
+
+    padding: 28px;
+
+    border-bottom:
+        1px solid var(--border);
+}
+
+.services article>b {
+    color: var(--blue);
+    font-size: 24px;
+}
+
+.services h2 {
+    margin: 0;
+    font-size: 25px;
+}
+
+.services article:target {
+    background: #f5faff;
+
+    border-left:
+        4px solid var(--accent);
+}
+
+
+/* ========================================
+   NOSOTROS
+======================================== */
+
+.narrow {
+    max-width: 820px;
+}
+
+
+/* ========================================
+   CONTACTO
+======================================== */
+
+.contact {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 35px;
+}
+
+
+/* ========================================
+   FOOTER
+======================================== */
+
+footer {
+    background: #050d1c;
+    color: #cbd5e1;
+
+    padding: 45px 0 20px;
+
+    border-top:
+        4px solid var(--blue);
+}
+
+.foot {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 30px;
+}
+
+.foot b {
+    color: #fff;
+    font-size: 20px;
+}
+
+.foot a {
+    color: var(--accent);
+}
+
+.bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+
+    border-top: 1px solid #273244;
+
+    margin-top: 30px;
+    padding-top: 18px;
+
+    font-size: 12px;
+    color: #8995a8;
+}
+
+.powered {
+    white-space: nowrap;
+}
+
+.powered strong {
+    color: var(--accent);
+    letter-spacing: .05em;
+}
+
+/* ========================================
+   CONTACTO
+======================================== */
+
+.contact-card {
+    margin-top: 25px;
+    padding: 30px;
+
+    background: var(--dark);
+    color: #fff;
+
+    border-radius: 20px;
+    border-top: 5px solid var(--blue);
+
+    box-shadow:
+        0 18px 40px rgba(7, 19, 41, .12);
+}
+
+.contact-card>span {
+    display: block;
+
+    color: var(--accent);
+
+    font-size: 12px;
+    font-weight: 800;
+
+    letter-spacing: .12em;
+}
+
+.contact-phone {
+    display: inline-block;
+
+    margin: 8px 0;
+
+    color: #fff;
+
+    font-size: clamp(30px, 4vw, 42px);
+    line-height: 1.1;
+
+    font-weight: 800;
+    text-decoration: none;
+}
+
+.contact-phone:hover {
+    color: var(--accent);
+}
+
+.contact-card p {
+    color: #cbd5e1;
+}
+
+.contact-options {
+    margin-top: 30px;
+    padding: 25px;
+
+    background: var(--light);
+
+    border-radius: 18px;
+    border-left: 5px solid var(--blue);
+}
+
+.contact-options h3 {
+    margin-top: 0;
+    color: var(--dark);
+}
+
+.contact-options ul {
+    margin-bottom: 0;
+    padding-left: 22px;
+}
+
+.contact-options li {
+    margin: 8px 0;
+    color: var(--muted);
+}
+
+
+/* ========================================
+   RESPONSIVE
+======================================== */
+
+@media (max-width: 800px) {
+
+    .nav {
+        min-height: 72px;
+    }
+
+    .brand-logo {
+        width: 50px;
+        height: 50px;
+    }
+
+    .brand strong {
+        font-size: 18px;
+    }
+
+    .brand small {
+        max-width: 190px;
+        line-height: 1.2;
+    }
+
+    .nav nav {
+        display: none;
+
+        position: absolute;
+        top: 72px;
+        left: 0;
+        right: 0;
+
+        background: #fff;
+
+        padding: 10px 4%;
+
+        flex-direction: column;
+        gap: 0;
+
+        box-shadow:
+            0 10px 20px rgba(0, 0, 0, .08);
+    }
+
+    .nav nav.open {
+        display: flex;
+    }
+
+    .nav nav a {
+        padding: 12px 0;
+    }
+
+    .menu {
+        display: block;
+    }
+
+    .hero {
+        padding: 60px 0;
+    }
+
+    .hero-grid,
+    .contact {
+        grid-template-columns: 1fr;
+    }
+
+    .cards,
+    .strip-grid,
+    .foot {
+        grid-template-columns: 1fr;
+    }
+
+    .section {
+        padding: 60px 0;
+    }
+
+    .cta {
+        display: grid;
+        gap: 25px;
+    }
+
+    .services article {
+        grid-template-columns: 45px 1fr;
+        gap: 15px;
+        padding: 25px 10px;
+    }
+
+    .about-grid {
+        grid-template-columns: 1fr;
+        gap: 35px;
+    }
+
+    .about-photo img {
+        min-height: auto;
+    }
+
+    .tire-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .quote-box {
+        display: grid;
+    }
+
+    .brand-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .brands-contact {
+        display: grid;
+    }
+
+    .service-detail-grid {
+        grid-template-columns: 1fr;
+        gap: 35px;
+    }
+
+    .service-detail {
+        padding: 60px 0;
+    }
+
+}
+
+
+@media (max-width: 500px) {
+
+    .brand small {
+        display: none;
+    }
+
+    .hero h1,
+    .page h1 {
+        font-size: 38px;
+    }
+
+    .hero-card {
+        padding: 28px;
+    }
+
+    .actions {
+        display: grid;
+    }
+
+    .btn {
+        text-align: center;
+    }
+
+    .tire-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .brand-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .bottom {
+        flex-direction: column;
+        text-align: center;
+        gap: 6px;
+    }
+
+    .powered {
+        white-space: normal;
+    }
+
+}
+
+.call {
+    background: var(--blue);
+    color: #fff;
+}
+
+.call:hover {
+    background: var(--dark-2);
+}
+
+.hero-contact {
+    margin-top: 22px;
+    padding-top: 18px;
+    border-top: 1px solid var(--border);
+    text-align: center;
+}
+
+.hero-contact span {
+    display: block;
+    color: var(--muted);
+    font-size: 12px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: .08em;
+}
+
+.hero-contact a {
+    display: inline-block;
+    margin-top: 4px;
+    color: var(--blue);
+    font-size: 24px;
+    font-weight: 800;
+    text-decoration: none;
+}
+
+.hero-contact a:hover {
+    text-decoration: underline;
+}
+
+/* ========================================
+   FOTOGRAFÍA DE UBICACIÓN
+======================================== */
+
+.location-photo {
+    margin: 25px 0;
+}
+
+.location-photo img {
+    display: block;
+    width: 100%;
+    max-height: 480px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 18px;
+    box-shadow: 0 15px 35px rgba(7, 19, 41, .15);
+}
+
+.location-photo figcaption {
+    margin-top: 8px;
+    color: var(--muted);
+    font-size: 13px;
+}
+
+/* ========================================
+   NOSOTROS - INSTALACIONES
+======================================== */
+
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 55px;
+    align-items: center;
+}
+
+.about-content h2 {
+    margin-top: 8px;
+    font-size: 38px;
+    line-height: 1.15;
+    color: var(--dark);
+}
+
+.about-content p {
+    color: var(--muted);
+    font-size: 17px;
+}
+
+.about-photo {
+    margin: 0;
+}
+
+.about-photo img {
+    display: block;
+    width: 100%;
+    min-height: 380px;
+    object-fit: cover;
+    border-radius: 22px;
+    box-shadow: 0 20px 45px rgba(7, 19, 41, .18);
+}
+
+.about-photo figcaption {
+    margin-top: 8px;
+    color: var(--muted);
+    font-size: 13px;
+}
+
+.blue {
+    background: var(--blue);
+    color: #fff;
+}
+
+.blue:hover {
+    background: var(--dark-2);
+}
+
+/* ========================================
+   TIPOS DE NEUMÁTICOS
+======================================== */
+
+.section-intro {
+    max-width: 720px;
+    color: var(--muted);
+    font-size: 17px;
+}
+
+.tire-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+    margin-top: 35px;
+}
+
+.tire-card {
+    position: relative;
+    padding: 30px;
+    overflow: hidden;
+
+    background: #fff;
+
+    border: 1px solid var(--border);
+    border-radius: 20px;
+
+    transition:
+        transform .2s,
+        box-shadow .2s,
+        border-color .2s;
+}
+
+.tire-card::before {
+    content: "";
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 4px;
+
+    background: linear-gradient(90deg,
+            var(--blue),
+            var(--blue-light),
+            var(--accent));
+}
+
+.tire-card:hover {
+    transform: translateY(-5px);
+
+    border-color: #cbd5e1;
+
+    box-shadow:
+        0 18px 40px rgba(7, 19, 41, .10);
+}
+
+.tire-icon {
+    font-size: 40px;
+    margin-bottom: 12px;
+}
+
+.tire-card h3 {
+    margin: 5px 0 10px;
+    color: var(--dark);
+    font-size: 23px;
+}
+
+.tire-card p {
+    color: var(--muted);
+}
+
+.tire-card a {
+    display: inline-block;
+
+    margin-top: 10px;
+
+    color: var(--blue);
+
+    font-weight: 800;
+    text-decoration: none;
+}
+
+.tire-card a:hover {
+    text-decoration: underline;
+}
+
+.quote-box {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 35px;
+
+    margin-top: 35px;
+    padding: 30px;
+
+    background: var(--dark);
+    color: #fff;
+
+    border-radius: 20px;
+    border-left: 5px solid var(--accent);
+}
+
+.quote-box span {
+    color: var(--accent);
+
+    font-size: 12px;
+    font-weight: 800;
+
+    letter-spacing: .1em;
+    text-transform: uppercase;
+}
+
+.quote-box h3 {
+    margin: 5px 0;
+    font-size: 25px;
+}
+
+.quote-box p {
+    margin: 5px 0;
+    color: #cbd5e1;
+}
+
+/* ========================================
+   MARCAS DE NEUMÁTICOS
+======================================== */
+
+.brands-section {
+    padding: 75px 0;
+    background: var(--light);
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+}
+
+.brands-heading {
+    max-width: 760px;
+}
+
+.brands-heading label {
+    color: var(--blue);
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: .16em;
+}
+
+.brands-heading h2 {
+    margin: 8px 0 15px;
+    color: var(--dark);
+    font-size: 36px;
+    line-height: 1.15;
+}
+
+.brands-heading p {
+    color: var(--muted);
+    font-size: 17px;
+}
+
+.brand-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    margin-top: 35px;
+}
+
+.brand-item {
+    display: grid;
+    place-items: center;
+
+    min-height: 85px;
+    padding: 18px;
+
+    background: #fff;
+
+    border: 1px solid var(--border);
+    border-radius: 14px;
+
+    color: var(--dark);
+
+    font-size: 18px;
+    font-weight: 800;
+    text-align: center;
+
+    transition:
+        transform .2s,
+        border-color .2s,
+        box-shadow .2s;
+}
+
+.brand-item:hover {
+    transform: translateY(-3px);
+    border-color: var(--blue);
+
+    box-shadow:
+        0 12px 25px rgba(7, 19, 41, .08);
+}
+
+.brands-contact {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+
+    margin-top: 30px;
+    padding: 25px 30px;
+
+    background: #fff;
+
+    border-radius: 16px;
+    border-left: 5px solid var(--accent);
+}
+
+.brands-contact p {
+    margin: 0;
+}
+
+/* ========================================
+   DETALLE DE SERVICIOS
+======================================== */
+
+.service-detail {
+    padding: 80px 0;
+    scroll-margin-top: 100px;
+}
+
+.service-detail.alternate {
+    background: var(--light);
+}
+
+.service-detail-grid {
+    display: grid;
+    grid-template-columns: 1.1fr .9fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.service-detail label {
+    color: var(--blue);
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: .16em;
+}
+
+.service-detail h2 {
+    margin: 8px 0 20px;
+    color: var(--dark);
+    font-size: 38px;
+    line-height: 1.15;
+}
+
+.service-detail p {
+    color: var(--muted);
+    font-size: 17px;
+}
+
+
+/* ========================================
+   TARJETA DE INFORMACIÓN
+======================================== */
+
+.service-info-card {
+    padding: 35px;
+
+    background: var(--dark);
+    color: #fff;
+
+    border-radius: 22px;
+    border-top: 5px solid var(--blue);
+
+    box-shadow:
+        0 20px 45px rgba(7, 19, 41, .15);
+}
+
+.service-info-card span {
+    color: var(--accent);
+
+    font-size: 12px;
+    font-weight: 800;
+
+    letter-spacing: .12em;
+}
+
+.service-info-card h3 {
+    margin: 8px 0 12px;
+
+    color: #fff;
+    font-size: 27px;
+}
+
+.service-info-card p {
+    color: #cbd5e1;
+}
+
+
+/* ========================================
+   SEMÁFORO
+======================================== */
+
+.traffic-card {
+    padding: 35px;
+
+    background: #fff;
+
+    border: 1px solid var(--border);
+    border-radius: 22px;
+
+    box-shadow:
+        0 20px 45px rgba(7, 19, 41, .10);
+}
+
+.traffic-card h3 {
+    margin-top: 0;
+    margin-bottom: 25px;
+
+    color: var(--dark);
+    font-size: 26px;
+}
+
+.traffic-item {
+    display: grid;
+    grid-template-columns: 38px 1fr;
+    gap: 16px;
+    align-items: start;
+
+    padding: 18px 0;
+
+    border-bottom: 1px solid var(--border);
+}
+
+.traffic-item:last-child {
+    border-bottom: 0;
+}
+
+.traffic-light {
+    display: block;
+
+    width: 28px;
+    height: 28px;
+
+    margin-top: 3px;
+
+    border-radius: 50%;
+
+    box-shadow:
+        0 3px 8px rgba(0, 0, 0, .15);
+}
+
+.traffic-item.green .traffic-light {
+    background: #22c55e;
+}
+
+.traffic-item.yellow .traffic-light {
+    background: #facc15;
+}
+
+.traffic-item.red .traffic-light {
+    background: #ef4444;
+}
+
+.traffic-item strong {
+    color: var(--dark);
+    font-size: 19px;
+}
+
+.traffic-item p {
+    margin: 3px 0 0;
+
+    color: var(--muted);
+    font-size: 14px;
+}
+
+/* ========================================
+   RESPONSIVE FINAL
+======================================== */
+
+@media (max-width: 800px) {
+
+    .about-grid {
+        grid-template-columns: 1fr;
+        gap: 35px;
+    }
+
+    .about-photo img {
+        min-height: auto;
+    }
+
+    .tire-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .brand-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .brands-contact {
+        display: grid;
+    }
+
+    .quote-box {
+        display: grid;
+    }
+
+    .service-detail-grid {
+        grid-template-columns: 1fr;
+        gap: 35px;
+    }
+
+    .service-detail {
+        padding: 60px 0;
+    }
+    
+}
+
+
+@media (max-width: 500px) {
+
+    .tire-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .brand-grid {
+        grid-template-columns: 1fr;
+    }
+
+}
