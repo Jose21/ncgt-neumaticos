@@ -1367,3 +1367,43 @@ footer {
     }
 
 }
+
+/* ========================================
+   ICONOS DE REDES SOCIALES
+======================================== */
+
+.btn .social-icon,
+.social-link .social-icon,
+.foot a .social-icon {
+    width: 19px;
+    height: 19px;
+    flex: 0 0 19px;
+    vertical-align: middle;
+}
+
+.btn:has(.social-icon),
+.social-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 9px;
+}
+
+.social-link {
+    text-decoration: none;
+}
+
+.social-link:hover {
+    text-decoration: underline;
+}
+
+.facebook-link .social-icon {
+    width: 20px;
+    height: 20px;
+}
+
+@media (max-width: 500px) {
+    .btn:has(.social-icon) {
+        width: 100%;
+    }
+}
